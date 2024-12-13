@@ -1,25 +1,29 @@
+// Arduino Nano as a slave Pulse Width Modulator (PWM)
+// Joe Reed N9JR December 2024
+
+
 #include <Wire.h>
 
 #define PWM 10
 
-byte RxByte;
-byte LastByte;
+byte Rx;
+byte LastByte = 0;
 
-void I2C_RxHandler(int numbytes) {
+void PWM_Handler(int pwm) {
   while(Wire.available()) {
-    RxByte=Wire.read();
+    Rx=Wire.read();
   }
 }
 
 void setup() {
   pinMode(PWM,OUTPUT);
   Wire.begin(0x55);
-  Wire.onReceive(I2C_RxHandler);
+  Wire.onReceive(PWM_Handler);
 }
 
 void loop() {
-  if(RxByte != LastByte) {
-    analogWrite(PWM,RxByte);
-    LastByte=RxByte;
+  if(Rx != LastByte) {
+    analogWrite(PWM,Rx);
+    LastByte=Rx;
   }
 }
