@@ -23,7 +23,7 @@ int CCW=33;           // Rotor controller DIN pin 2
 // Variables
 int adc=0;
 //float vpd=.00488288;  // Volts per division 5/1024; 
-float vpd=.0033203;  // Volts per division 3.4/1024; 
+float vpd=.0032226;   // Volts per division 3.3/1024; 
 int azimuth=0;        // Azimuth in degrees
 int last_azimuth=0;   // Previous azimuth
 int display_azimuth=0;// Azimuth corrected for rotor stops
