@@ -6,6 +6,6 @@ This is auxillary controller for the Yaesu G-800, G-1000 and G-2800 series of an
 - A slider bar for slide and go entry.
 - A configurable soft start and stop zones to lessen hardware wear.
 - Configurable rotor speeds.
-- Customizable user preferences in the system memus.
+- Customizable user preferences in the system memus
 
-
+The controller is based on the Arduino Nano and uses a 3.5" Nextion display.  To program the Nano you will need to install the Arduino IDE.  You will also need to add the EasyNextion library through the Library Manager in the IDE.  
